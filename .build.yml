@@ -10,8 +10,7 @@ tasks:
   - update-year: |
       cd site
       CURRENT_YEAR=$(date +%Y)
-      sed -i "s/{{YEAR_RANGE}}/2024–$CURRENT_YEAR/g" index.html
-      sed -i "s/{{YEAR_RANGE}}/2024–$CURRENT_YEAR/g" LICENSE
+      sed -i "s/{{YEAR}}/$CURRENT_YEAR/g" index.html 
   - package: |
       cd site
       tar --exclude=.git -czf ../site.tar.gz .
