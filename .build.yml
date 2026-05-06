@@ -14,6 +14,6 @@ tasks:
       sed -i "s/{{YEAR_RANGE}}/2024–$CURRENT_YEAR/g" LICENSE
   - package: |
       cd site
-      tar -cvz . > ../site.tar.gz
+      tar --exclude=.git -czf ../site.tar.gz .
   - upload: |
-      hut pages publish -d $site ../site.tar.gz
+      hut pages publish -d $site site.tar.gz
