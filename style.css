@@ -59,14 +59,14 @@ a {
 
 @media (hover: hover) {
   a:hover {
-    background: var(--fg);
+    background: linear-gradient(var(--fg) 0 0) center / 100% 1.08em no-repeat;
     color: var(--bg);
     text-decoration: none;
   }
 }
 
 a:focus-visible {
-  background: var(--fg);
+  background: linear-gradient(var(--fg) 0 0) center / 100% 1.08em no-repeat;
   color: var(--bg);
   text-decoration: none;
   outline: 2px solid var(--fg);

@@ -4,7 +4,6 @@ packages:
   - hut
 environment:
   site: ivanbelousov.com
-  www: www.ivanbelousov.com
 sources:
   - https://git.sr.ht/~ivanbelousov/site
 tasks:
@@ -15,25 +14,5 @@ tasks:
   - package: |
       cd site
       tar --exclude=.git -czf ../site.tar.gz .
-  - redirect-www: |
-      mkdir -p www-redirect
-      cat > www-redirect/index.html <<'EOF'
-      <!DOCTYPE html>
-      <html lang="en">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="refresh" content="0; url=https://ivanbelousov.com/">
-        <link rel="canonical" href="https://ivanbelousov.com/">
-        <title>Redirecting to ivanbelousov.com</title>
-      </head>
-      <body>
-        <p><a href="https://ivanbelousov.com/">ivanbelousov.com</a></p>
-      </body>
-      </html>
-      EOF
-      cp www-redirect/index.html www-redirect/404.html
-      tar -C www-redirect -czf www-redirect.tar.gz .
   - upload: |
       hut pages publish -d $site site.tar.gz
-      hut pages publish -d $www www-redirect.tar.gz
