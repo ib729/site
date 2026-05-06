@@ -4,6 +4,8 @@ packages:
   - hut
 environment:
   site: ivanbelousov.srht.site
+sources:
+  - https://git.sr.ht/~ivanbelousov/site
 tasks:
   - update-year: |
       CURRENT_YEAR=$(date +%Y)
