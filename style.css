@@ -80,51 +80,8 @@ footer {
   font-size: 0.95rem;
 }
 
-.swap-toggle {
-  position: absolute;
-  opacity: 0;
-}
-
-.swap {
-  display: inline-grid;
-  padding: 0.6rem 1rem;
-  cursor: pointer;
-}
-
-.swap br {
-  display: none;
-}
-
-.swap span {
-  grid-area: 1 / 1;
-  transition: opacity 0.3s;
-}
-
-.swap .new {
-  opacity: 0;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .swap:hover .old {
-    opacity: 0;
-  }
-
-  .swap:hover .new {
-    opacity: 1;
-  }
-}
-
-.swap-toggle:checked + .swap .old {
-  opacity: 0;
-}
-
-.swap-toggle:checked + .swap .new {
-  opacity: 1;
-}
-
-.swap-toggle:focus-visible + .swap {
-  outline: 2px solid currentColor;
-  outline-offset: 4px;
+.copyright {
+  margin-top: 0.6rem;
 }
 
 .links-menu {
